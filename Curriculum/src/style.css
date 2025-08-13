@@ -1,0 +1,68 @@
+.profile-header {
+  background-image: url('/public/FondoAlargadoHead\ .jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  min-height: 500px;
+}
+
+
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #90caf9;
+}
+
+section, header {
+  padding: 2rem;
+  margin: auto;
+  max-width: 900px;
+}
+
+.profile-info {
+  text-align: relative;
+  padding: 1;
+}
+
+/* 🧠 Sección de habilidades */
+.skills-section {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  margin-top: 2rem;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: #b0bec5;
+}
+
+/* 📬 Contacto */
+.contact-section {
+  margin-top: 2rem;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
