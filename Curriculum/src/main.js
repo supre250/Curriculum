@@ -1,3 +1,5 @@
+import 'boostrap/dist/css/bootstrap.min.css'; 
+
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.profile-header');
   const scrollY = window.scrollY;

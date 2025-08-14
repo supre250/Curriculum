@@ -1,0 +1,132 @@
+
+:root {
+  --bg-1: #0f172a;      /* slate-900 */
+  --bg-2: #0b1120;      /* slate-950 */
+  --ink: #e5e7eb;       /* gray-200 */
+  --muted: #cbd5e1;     /* slate-300 */
+  --accent: #22d3ee;    /* cyan-400 */
+  --accent-2: #a78bfa;  /* violet-400 */
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+  --maxw: 72rem;        /* ~1152px */
+}
+
+/* Modo claro opcional (si tu sitio es claro por defecto)
+@media (prefers-color-scheme: light) {
+  :root {
+    --ink: #0f172a;
+    --muted: #334155;
+  }
+}
+*/
+
+/* CONTENEDOR PRINCIPAL */
+.profile-header {
+  position: relative;
+  isolation: isolate;
+  color: var(--ink);
+  padding: clamp(3rem, 6vw, 6rem) 1rem;
+  overflow: hidden;
+
+  /* Fondo con capas: dos radiales + degradado base */
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(34, 211, 238, 0.14), transparent 60%),
+    radial-gradient(1000px 800px at 85% 20%, rgba(167, 139, 250, 0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+}
+
+/* Tarjeta de contenido para legibilidad y enfoque visual */
+.profile-info {
+  position: relative;
+  max-width: min(90ch, var(--maxw));
+  margin-inline: auto;
+  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.00));
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: var(--shadow);
+}
+
+/* Barra de acento sutil a la izquierda */
+.profile-info::before {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.5rem;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  opacity: 0.9;
+}
+
+/* TIPOGRAFÍA */
+.profile-name {
+  margin: 0 0 0.35rem 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-family: "Lato", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+
+  /* Tamaño fluido */
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+
+  /* Título con degradado sutil */
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.profile-info p {
+  margin: 0.4rem 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+/* ANIMACIÓN SUAVE DE ENTRADA */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-info > * {
+  animation: fadeUp 0.8s ease-out both;
+}
+
+.profile-info > :nth-child(2) { animation-delay: 0.06s; }
+.profile-info > :nth-child(3) { animation-delay: 0.12s; }
+
+/* ACCESIBILIDAD: respeta preferencias de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* RESPONSIVE Y PULIDO */
+@media (max-width: 480px) {
+  .profile-header {
+    padding: 2.5rem 1rem;
+  }
+  .profile-info::before {
+    left: 0.4rem;
+  }
+}
+
+/* En pantallas muy anchas, da un poco más de aire */
+@media (min-width: 1280px) {
+  .profile-header {
+    padding-block: 7rem;
+  }
+}

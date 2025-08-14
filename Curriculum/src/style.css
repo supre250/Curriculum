@@ -1,88 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/*---------------------------NavBar-------------------------------------------*/
 .profile-header {
-  background-image: url('/FondoAlargadoHead\ .jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100vh; /* 👈 Ocupa toda la altura de la ventana */
+    margin-top: 70px;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: #ffc107 !important;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 1rem;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Great Vibes', cursive;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.15);
+  color: #ffc107 !important; /* Amarillo dorado */
+  transition: transform 0.8s ease;
+  letter-spacing: 1.1px;
+}
+
+.navbar, .navbar-brand, .nav-link {
+  transition: all 0.3s ease;
+}
+
+
+.nav-link {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.4s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important; /* Amarillo dorado */    
+}
+
+.navbar {
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    min-height: 70px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #ffc107; /* Amarillo dorado */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: sticky;
-  color: #ffffff;
-  overflow: hidden;
-  z-index: 2;
-
-}
-
-.profile-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,00), rgba(18,18,18,1));
-  z-index: 0;
-}
-
-.profile-info {
-  background-color: rgba(0,0,0,0.5);
-  padding: 2rem;
-  max-width: 800px;
-  border-radius: 10px;
 }
 
 
-body {
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+.bg-dark {
+    background: linear-gradient(90deg, #0d0d0d, #1a1a1a);
 }
 
-h1, h2 {
-  color: #90caf9;
-}
+/*-------------------------FIN DEL NavBar-----------------------------------*/
 
-section {
-  padding: 2rem;
-  margin: auto;
-  max-width: 900px;
-}
-
-
-
-/* 🧠 Sección de habilidades */
-.skills-section {
-  height: 100vh;
-  background-image: url('/public/yo.jpg'); /* 👈 Imagen que aparece después del scroll */
-  background-size: cover;
-  background-position: center;
-  padding: 4rem;
-  color: #fff;
-  z-index: 1;
-
-}
-
-.skills-list {
-  list-style: none;
-  padding: 0;
-}
-
-.skills-list li {
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-  color: #b0bec5;
-}
-
-/* 📬 Contacto */
-.contact-section {
-  color: #333;
-  background-color: #f4f4f4;
-  padding: 4rem;
-  
-}
 
